@@ -1,0 +1,42 @@
+﻿@model ServisTakip.Models.Kisi
+@{
+    ViewBag.Title = "KisiGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Çalışan Bilgileri</h2>
+@using (Html.BeginForm("KisiGuncelle", "Kisi", FormMethod.Post))
+{
+<div class="padding:10px;">
+    @Html.HiddenFor(x => x.KisiId)
+    <div>
+        <label>Ad: </label><br />
+        @Html.TextBoxFor(q => q.KisiAd, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Soyad: </label><br />
+        @Html.TextBoxFor(q => q.KisiSoyad, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Telefon: </label><br />
+        @Html.TextBoxFor(q => q.KisiTelefon, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Adres </label><br />
+        @Html.TextAreaFor(q => q.Adres, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Binilen Lokasyon: </label><br />
+        @Html.TextBoxFor(q => q.BinilenLokasyon, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Binilen Servis: </label><br />
+        @Html.DropDownListFor(q => q.ServisId, (List<SelectListItem>)ViewBag.dp, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+</div>
+}
+
+

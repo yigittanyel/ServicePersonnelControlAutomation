@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Çalışan-Servis Takip Otomasyonu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item"><u>Menüler</u></h3>
+        <a href="/Kisi/KisiListele/" class="w3-bar-item w3-button"> <i class="fal fa-user-hard-hat"> <b>Çalışanlar</b></i></a>
+        <a href="/Kisi/YeniKisiEkle/" class="w3-bar-item w3-button"><i class="fas fa-plus-circle"> <b>Yeni Çalışan Ekleme</b></i></a>
+        <a href="/Servis/ServisListele/" class="w3-bar-item w3-button"><i class="far fa-taxi"> <b>Servis/Şoför Bilgileri</b></i></a>
+        <a href="/Servis/YeniServisEkle/" class="w3-bar-item w3-button"><i class="fas fa-plus-circle"> <b>Yeni Servis/Şoför Ekleme</b></i></a>
+        <a href="/GirisYap/Cikis/" class="w3-bar-item w3-button"><i class="fas fa-times"> <b>Çıkış</b></i></a>
+        <br /><br />
+        <img src="~/loginTema/bg1.png" width="136" height="150" style="margin-left:40px;">
+        <br /><br /><br />
+              <div class="text-center">
+                  <p><b> Adres:</b> Ahmet Vefik Paşa, Taşpınar Sk. No: 3, 16450 Ahmet Vefik Paşa Osb/Kestel/Bursa</p>
+                  <p><b> Telefon:</b>(0224) 371 22 66</p>
+              </div>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+    </div>
+
+</body>
+</html>

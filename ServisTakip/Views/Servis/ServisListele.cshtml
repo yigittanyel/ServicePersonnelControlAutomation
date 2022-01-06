@@ -1,0 +1,44 @@
+﻿@using ServisTakip.Models
+@model List<Servis>
+
+@{
+    ViewBag.Title = "ServisListele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h2>Servisler</h2>
+
+<a href="/Servis/YeniServisEkle/" class="btn btn-success">Yeni Servis/Şoför Ekle</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Plaka</th>
+            <th scope="col">Şoför Adı</th>
+            <th scope="col">Şoför Soyadı</th>
+            <th scope="col">Şoför Telefon</th>
+            <th scope="col">Gidilen Güzergah</th>
+            <th scope="col">Rota Detayları</th>
+            <th scope="col">Sil</th>
+            <th scope="col">Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.Plaka</td>
+            <td>@x.SoforAdi</td>
+            <td>@x.SoforSoyadi</td>
+            <td>@x.SoforTelefon</td>
+            <td>@x.GidilenGuzergah</td>
+            <td><input type="button" class="btn btn-success" value="Detaylar" title="@x.GuzergahDetay"/></td>
+            <td><a href="/Servis/ServisSil/@x.ServisId" class="btn btn-danger"  onclick = "return confirm('Silmek istediğinizden emin misiniz?');">Sil</a></td>
+            <td><a href="/Servis/ServisGetir/@x.ServisId" class="btn btn-primary">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
