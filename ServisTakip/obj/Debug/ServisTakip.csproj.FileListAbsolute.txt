@@ -84,3 +84,4 @@ C:\Users\msi\source\repos\ServisTakip\ServisTakip\obj\Debug\ServisTakip.Migratio
 C:\Users\msi\source\repos\ServisTakip\ServisTakip\obj\Debug\ServisTakip.csproj.GenerateResource.cache
 C:\Users\msi\source\repos\ServisTakip\ServisTakip\obj\Debug\ServisTakip.Migrations.add_details_columnn.resources
 C:\Users\msi\source\repos\ServisTakip\ServisTakip\obj\Debug\ServisTakip.Migrations.kullanici_added.resources
+C:\Users\msi\source\repos\ServisTakip\ServisTakip\obj\Debug\ServisTakip.Migrations._34.resources

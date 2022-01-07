@@ -146,6 +146,10 @@
     <Compile Include="Migrations\202201060814270_kullanici_added.designer.cs">
       <DependentUpon>202201060814270_kullanici_added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201071336336_34.cs" />
+    <Compile Include="Migrations\202201071336336_34.designer.cs">
+      <DependentUpon>202201071336336_34.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Kisi.cs" />
@@ -166,9 +170,8 @@
     <Content Include="loginTema\css\style.css" />
     <Content Include="loginTema\fonts\fontawesome-webfont.svg" />
     <Content Include="loginTema\bg1.png" />
-    <Content Include="loginTema\bg2.jpg" />
+    <Content Include="loginTema\images\bg2.jpg" />
     <Content Include="loginTema\images\3.jpg" />
-    <Content Include="loginTema\images\ibras.jpeg" />
     <Content Include="loginTema\index.html" />
     <Content Include="loginTema\w3layouts-License.txt" />
     <Content Include="Scripts\bootstrap.js" />
@@ -210,6 +213,7 @@
     <Content Include="Views\Servis\ServisGetir.cshtml" />
     <Content Include="Views\Servis\YeniServisEkle.cshtml" />
     <Content Include="Views\GirisYap\Giris.cshtml" />
+    <Content Include="Views\Kisi\KisiPlaka.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -236,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201060814270_kullanici_added.resx">
       <DependentUpon>202201060814270_kullanici_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201071336336_34.resx">
+      <DependentUpon>202201071336336_34.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

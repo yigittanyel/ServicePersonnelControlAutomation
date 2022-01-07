@@ -29,13 +29,13 @@
         @foreach (var x in Model)
         {
         <tr>
-            <td>@x.Plaka</td>
+            <td><a href="/Kisi/KisiPlaka/@x.ServisId" class="btn btn-warning"><b> @x.Plaka</b></a>  </td>
             <td>@x.SoforAdi</td>
             <td>@x.SoforSoyadi</td>
             <td>@x.SoforTelefon</td>
             <td>@x.GidilenGuzergah</td>
-            <td><input type="button" class="btn btn-success" value="Detaylar" title="@x.GuzergahDetay"/></td>
-            <td><a href="/Servis/ServisSil/@x.ServisId" class="btn btn-danger"  onclick = "return confirm('Silmek istediğinizden emin misiniz?');">Sil</a></td>
+            <td><input type="button" class="btn btn-success" value="Detaylar" title="@x.GuzergahDetay" /></td>
+            <td><a href="/Servis/ServisSil/@x.ServisId" class="btn btn-danger" onclick="return confirm('Silmek istediğinizden emin misiniz?');">Sil</a></td>
             <td><a href="/Servis/ServisGetir/@x.ServisId" class="btn btn-primary">Güncelle</a></td>
         </tr>
         }

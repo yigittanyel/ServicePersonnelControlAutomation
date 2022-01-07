@@ -1,0 +1,48 @@
+﻿@using ServisTakip.Models
+@model List<Kisi>
+
+
+@{
+    ViewBag.Title = "KisiPlaka";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@*<h2>Bu Plakalı Servisi Kullanan Çalışanlar</h2>*@
+
+<br />
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Plaka</th>
+            <th scope="col">Çalışanın Adı</th>
+            <th scope="col">Çalışanın Soyadı</th>
+            <th scope="col">Çalışanın Telefonu</th>
+            <th scope="col">Çalışanın Adresi</th>
+            <th scope="col">Binilen Lokasyon</th>
+            <th scope="col">Gidilen Güzergah</th>
+            <th scope="col">Rota Detayları</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td><b> <span style="color:white;background-color:black;font-size:20px;">@x.Servis.Plaka </span></b></td>
+                <td>@x.KisiAd</td>
+                <td>@x.KisiSoyad</td>
+                <td>@x.KisiTelefon</td>
+                <td>@x.Adres</td>
+                <td>@x.BinilenLokasyon</td>
+                <td>@x.Servis.GidilenGuzergah</td>
+                <td>@x.Servis.GuzergahDetay</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

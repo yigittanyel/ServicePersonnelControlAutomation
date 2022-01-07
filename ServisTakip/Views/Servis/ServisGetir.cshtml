@@ -28,8 +28,7 @@
         </div>
         <div>
             <label>Gidilen Güzergah: </label><br />
-            @*@Html.DropDownListFor(q => q.GidilenGuzergah, (List<SelectListItem>)ViewBag.dp, new { @class = "form-control" })*@
-            @Html.TextBoxFor(q => q.GidilenGuzergah, new { @class = "form-control" })
+            @Html.DropDownListFor(q => q.ServisId, (List<SelectListItem>)ViewBag.dp, new { @class = "form-control" })
 
         </div>
         <div>

@@ -45,7 +45,6 @@ namespace ServisTakip.Controllers
         [HttpPost]
         public ActionResult KisiGuncelle(Kisi p)
         {
-
             var x = c.Kisis.FirstOrDefault(a => a.KisiId == p.KisiId);
             x.KisiId = p.KisiId;
             x.KisiAd = p.KisiAd;
@@ -76,6 +75,13 @@ namespace ServisTakip.Controllers
             c.Kisis.Add(p);
             c.SaveChanges();
             return RedirectToAction("KisiListele");
+        }
+
+        //servisin plakasına göre o servisle giden kişilerin listesi
+        public ActionResult KisiPlaka(int id)
+        {
+            var x = c.Kisis.Where(a => a.ServisId==id).ToList();
+            return View(x);
         }
     }
 }

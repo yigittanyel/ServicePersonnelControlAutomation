@@ -21,7 +21,6 @@ namespace ServisTakip.Models
         [MinLength(11, ErrorMessage = "En fazla {1} karakter uzunluğunda olmalıdır.")]
         public string SoforTelefon { get; set; }
 
-        [Required(ErrorMessage = "{0} alanı gereklidir.")]
         public string GidilenGuzergah { get; set; }
 
         [Required(ErrorMessage = "{0} alanı gereklidir.")]

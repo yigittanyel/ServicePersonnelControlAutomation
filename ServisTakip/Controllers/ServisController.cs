@@ -7,7 +7,6 @@ using System.Web.Mvc;
 
 namespace ServisTakip.Controllers
 {
-
     public class ServisController : Controller
     {
         // GET: Servis
@@ -30,13 +29,13 @@ namespace ServisTakip.Controllers
         //ID'YE GÖRE SERVİS GETİRME
         public ActionResult ServisGetir(int id)
         {
-            //List<SelectListItem> dep = (from x in c.Servis.ToList()
-            //                            select new SelectListItem
-            //                            {
-            //                                Text = x.GidilenGuzergah,
-            //                                Value = x.ServisId.ToString()
-            //                            }).ToList();
-            //ViewBag.dp = dep;
+            List<SelectListItem> dep = (from x in c.Servis.ToList()
+                                        select new SelectListItem
+                                        {
+                                            Text = x.GidilenGuzergah,
+                                            Value=x.ServisId.ToString()
+                                        }).ToList();
+            ViewBag.dp = dep;
             var d = c.Servis.Find(id);
             return View("ServisGetir", d);
         }
@@ -44,15 +43,15 @@ namespace ServisTakip.Controllers
         [HttpPost]
         public ActionResult ServisGuncelle(Servis p)
         {
-
+            //BURADA GUZERGAHLA İLGİLİ GÜNCELLERKEN BİR HATA VAR !!!
             var x = c.Servis.FirstOrDefault(a => a.ServisId == p.ServisId);
             x.ServisId = p.ServisId;
             x.Plaka = p.Plaka;
             x.SoforAdi = p.SoforAdi;
             x.SoforSoyadi = p.SoforSoyadi;
             x.SoforTelefon = p.SoforTelefon;
-            x.GidilenGuzergah = p.GidilenGuzergah;
             x.GuzergahDetay = p.GuzergahDetay;
+           // x.GidilenGuzergah = p.GidilenGuzergah;
             c.SaveChanges();
             return RedirectToAction("ServisListele");
         }
@@ -70,5 +69,8 @@ namespace ServisTakip.Controllers
             c.SaveChanges();
             return RedirectToAction("ServisListele");
         }
+
     }
 }
+
+//plakaya tıklanınca o servisle giden kişiler listelensin
