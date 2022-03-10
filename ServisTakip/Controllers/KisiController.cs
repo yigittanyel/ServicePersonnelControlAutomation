@@ -7,12 +7,12 @@ using System.Web.Mvc;
 
 namespace ServisTakip.Controllers
 {
-
     public class KisiController : Controller
     {
         // GET: Kisi
         Context c = new Context();
         //KİŞİ LİSTELE
+        //[Authorize] etme işlemi eklenecek.
         public ActionResult KisiListele()
         {
             var kisiList = c.Kisis.ToList();
@@ -65,9 +65,18 @@ namespace ServisTakip.Controllers
                                             Text = x.Plaka,
                                             Value = x.ServisId.ToString()
                                         }).ToList();
+
+            //List<SelectListItem> der = (from x in c.Servis.ToList()
+            //                            select new SelectListItem
+            //                            {
+            //                                Text = x.GidilenGuzergah,
+            //                                Value = x.ServisId.ToString()
+            //                            }).ToList();
             ViewBag.dp = dep;
+            //ViewBag.dr = der;
             return View();
         }
+
 
         [HttpPost]
         public ActionResult YeniKisiEkle(Kisi p)
@@ -76,6 +85,8 @@ namespace ServisTakip.Controllers
             c.SaveChanges();
             return RedirectToAction("KisiListele");
         }
+
+
 
         //servisin plakasına göre o servisle giden kişilerin listesi
         public ActionResult KisiPlaka(int id)

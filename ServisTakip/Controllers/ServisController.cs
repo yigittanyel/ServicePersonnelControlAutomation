@@ -33,7 +33,7 @@ namespace ServisTakip.Controllers
                                         select new SelectListItem
                                         {
                                             Text = x.GidilenGuzergah,
-                                            Value=x.ServisId.ToString()
+                                            Value = x.ServisId.ToString()
                                         }).ToList();
             ViewBag.dp = dep;
             var d = c.Servis.Find(id);
@@ -51,7 +51,7 @@ namespace ServisTakip.Controllers
             x.SoforSoyadi = p.SoforSoyadi;
             x.SoforTelefon = p.SoforTelefon;
             x.GuzergahDetay = p.GuzergahDetay;
-           // x.GidilenGuzergah = p.GidilenGuzergah;
+            //x.GidilenGuzergah = p.ServisId.ToString();
             c.SaveChanges();
             return RedirectToAction("ServisListele");
         }
